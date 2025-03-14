@@ -1,630 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
+	
+<!-- Mirrored from liahonafoundation.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Mar 2025 18:40:16 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liahona Foundation | Bridging the Digital Divide in Africa</title>
-    <meta name="description" content="Empowering students in Africa with laptops and tuition assistance to help them achieve their educational dreams.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/api/placeholder/32/32" alt="LF Logo">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #0056b3;
-            --primary-dark: #004494;
-            --secondary: #f8f9fa;
-            --dark: #212529;
-            --light: #f8f9fa;
-            --success: #28a745;
-            --info: #17a2b8;
-            --accent: #ffc107;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #444;
-            line-height: 1.7;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #212529;
-        }
-        
-        .font-weight-bold {
-            font-weight: 700 !important;
-        }
-        
-        .text-primary {
-            color: var(--primary) !important;
-        }
-        
-        .bg-primary {
-            background-color: var(--primary) !important;
-        }
-        
-        .bg-light-subtle {
-            background-color: rgba(248, 249, 250, 0.5);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .navbar-brand span {
-            font-weight: 600;
-            font-size: 1.5rem;
-        }
-        
-        .navbar-nav .nav-link {
-            padding: 0.5rem 1rem;
-            font-weight: 500;
-            position: relative;
-        }
-        
-        .navbar-nav .nav-link.active:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 1rem;
-            right: 1rem;
-            height: 2px;
-            background-color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/api/placeholder/1400/800') center/cover no-repeat;
-            color: white;
-            padding: 6rem 0;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-        
-        /* Mission Section */
-        .mission-section {
-            background-color: white;
-            position: relative;
-            z-index: 1;
-            margin-top: -60px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            padding: 3rem;
-        }
-        
-        /* Impact Stats */
-        .impact-stats .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .impact-stats .counter {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-        
-        .impact-stats h5 {
-            font-weight: 500;
-            color: #555;
-        }
-        
-        /* Programs Section */
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .program-card img {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
-        }
-        
-        /* Testimonial Section */
-        .testimonial {
-            background-color: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            height: 100%;
-        }
-        
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary);
-        }
-        
-        .testimonial-name {
-            font-weight: 600;
-            margin-bottom: 0;
-        }
-        
-        /* Call to Action */
-        .cta-section {
-            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('/api/placeholder/1400/600') center/cover no-repeat;
-            color: white;
-            padding: 5rem 0;
-        }
-        
-        .cta-section h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #212529;
-            color: rgba(255, 255, 255, 0.75);
-            padding: 4rem 0 2rem;
-        }
-        
-        footer h5 {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-        
-        footer a {
-            color: rgba(255, 255, 255, 0.75);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: white;
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 36px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 991.98px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .mission-section {
-                margin-top: -30px;
-                padding: 2rem;
-            }
-        }
-        
-        @media (max-width: 767.98px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .mission-section {
-                margin-top: 0;
-                border-radius: 0;
-            }
-            
-            .impact-stats .counter {
-                font-size: 2rem;
-            }
-        }
-    </style>
-</head>
+		<meta charset="utf-8" />
+		<title>
+			Home - Liahona Foundation: Bridging the Digital Divide in Africa
+		</title>
+		<meta
+			name="description"
+			content="Empowering students in the African region by providing laptops and tuition assistance for their education. Join Liahona Foundation in making a difference today."
+		/>
+		<meta
+			name="keywords"
+			content="education, laptops for students, tuition assistance, African students, digital divide, student support, educational resources, Liahona Foundation, Africa education, Africa tuition assistance"
+		/>
+		<meta name="author" content="Liahona Foundation" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
 
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="/api/placeholder/40/40" alt="Liahona Foundation Logo">
-                    <span class="text-primary ms-2">Liahona <span class="text-dark">Foundation</span></span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="impact.html">Our Impact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="apply.html">Apply</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                        <li class="nav-item ms-lg-3">
-                            <a class="btn btn-primary rounded-pill px-4" href="#donate">Donate</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+		<!-- Open Graph Meta Tags for Social Media -->
+		<meta
+			property="og:title"
+			content="Liahona Foundation - Empowering Students in the African Region"
+		/>
+		<meta
+			property="og:description"
+			content="Join us in providing laptops and tuition assistance to students in need. Support our mission to bridge the digital divide and ensure equal educational opportunities."
+		/>
+		<meta
+			property="og:image"
+			content="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/img/logo-single.svg"
+		/>
+		<meta property="og:url" content="index.html" />
+		<meta property="og:type" content="website" />
 
-    <!-- Hero Section -->
-    <section class="hero text-center" id="hero">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h1 class="mb-4">Bridging the Digital Divide in Africa</h1>
-                    <p class="lead mx-auto mb-5">We provide laptops and tuition assistance to students in Nigeria, empowering them to achieve their educational dreams and build a brighter future.</p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="#donate" class="btn btn-primary btn-lg rounded-pill px-4">Make a Donation</a>
-                        <a href="#programs" class="btn btn-outline-light btn-lg rounded-pill px-4">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="index.html" />
+		<meta
+			property="twitter:title"
+			content="Empowering Students in Africa with Laptops and Tuition Assistance | Liahona Foundation"
+		/>
+		<meta
+			property="twitter:description"
+			content="At Liahona Foundation, we provide essential laptops and tuition assistance to students in the African region, helping them achieve their educational dreams."
+		/>
 
-    <!-- Mission Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="mission-section text-center">
-                        <h2 class="mb-4">Our Mission</h2>
-                        <p class="lead mb-4">At Liahona Foundation, we are dedicated to bridging the digital divide for students in Nigeria by providing essential laptops and tuition assistance. We believe that every student deserves equal access to education.</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="about.html" class="btn btn-primary rounded-pill px-4">About Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Favicon -->
+		<link
+			href="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/img/logo-single.svg"
+			rel="icon"
+		/>
 
-    <!-- Impact Stats Section -->
-    <section class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h6 class="text-primary text-uppercase fw-bold mb-2">Our Impact</h6>
-                <h2>Making a Difference Together</h2>
-            </div>
-            <div class="row impact-stats text-center">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <div class="counter">$3,500+</div>
-                    <h5>Donations Raised</h5>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="counter">30+</div>
-                    <h5>Students Supported</h5>
-                </div>
-                <div class="col-md-4">
-                    <div class="icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="counter">12+</div>
-                    <h5>Laptops Provided</h5>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Google Web Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com/" />
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Saira:wght@500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
 
-    <!-- Programs Section -->
-    <section class="py-5" id="programs">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h6 class="text-primary text-uppercase fw-bold mb-2">What We Do</h6>
-                <h2>Our Programs</h2>
-                <p class="lead mx-auto" style="max-width: 700px;">We offer comprehensive support to help students overcome barriers to education and technology access.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <img src="/api/placeholder/400/300" alt="Laptop Program" class="img-fluid">
-                        <div class="p-4">
-                            <h4>Laptop Scholarship Program</h4>
-                            <p>We provide laptops to students who face significant digital barriers, enabling them to participate in online learning, research, and digital communication.</p>
-                            <a href="impact.html" class="btn btn-outline-primary rounded-pill mt-2">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <img src="/api/placeholder/400/300" alt="Tuition Program" class="img-fluid">
-                        <div class="p-4">
-                            <h4>Tuition Assistance Program</h4>
-                            <p>Our tuition assistance program helps alleviate the financial burden of education, making it accessible to all deserving students in Nigeria.</p>
-                            <a href="impact.html" class="btn btn-outline-primary rounded-pill mt-2">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="program-card">
-                        <img src="/api/placeholder/400/300" alt="Digital Skills" class="img-fluid">
-                        <div class="p-4">
-                            <h4>Educational Workshops</h4>
-                            <p>We organize workshops and training sessions to enhance the skills and knowledge of students, preparing them for the future job market.</p>
-                            <a href="impact.html" class="btn btn-outline-primary rounded-pill mt-2">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Icon Font Stylesheet -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
 
-    <!-- Testimonials Section -->
-    <section class="py-5 bg-light-subtle">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h6 class="text-primary text-uppercase fw-bold mb-2">Testimonials</h6>
-                <h2>Success Stories</h2>
-                <p class="lead mx-auto" style="max-width: 700px;">Hear from students who have benefited from our programs and are now on the path to success.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="/api/placeholder/80/80" alt="Student" class="me-3">
-                            <div>
-                                <h5 class="testimonial-name mb-1">Solomon</h5>
-                                <p class="mb-0 text-muted">BYU-Pathway Student</p>
-                            </div>
-                        </div>
-                        <p class="mb-0">"The laptop has significantly boosted my productivity and efficiency. I can now work and stay connected from anywhere, while accessing vast knowledge and creative tools for research and online learning."</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="/api/placeholder/80/80" alt="Student" class="me-3">
-                            <div>
-                                <h5 class="testimonial-name mb-1">Rachael</h5>
-                                <p class="mb-0 text-muted">Ensign College Student</p>
-                            </div>
-                        </div>
-                        <p class="mb-0">"The Liahona Foundation has been instrumental in my pursuit of Hospitality and Tourism Management by providing a much-needed laptop, transforming my academic experience from daunting to empowering."</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="/api/placeholder/80/80" alt="Student" class="me-3">
-                            <div>
-                                <h5 class="testimonial-name mb-1">Annie</h5>
-                                <p class="mb-0 text-muted">BYU-Pathway Student</p>
-                            </div>
-                        </div>
-                        <p class="mb-0">"I am immensely grateful for this laptop that helps me complete my degree. It has improved my academic pursuits and digital skills. Thank you to Liahona Foundation and its generous donors."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Libraries Stylesheet -->
+		<link href="lib/animate/animate.min.css" rel="stylesheet" />
+		<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Call to Action -->
-    <section class="cta-section text-center" id="donate">
-        <div class="container py-4">
-            <h2>Join Us in Making a Difference</h2>
-            <p class="lead mx-auto mb-4">Your support can transform a student's life by providing them with the tools they need to succeed. Every donation, no matter the size, brings us closer to our goal of bridging the digital divide.</p>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="bg-white p-4 rounded-3 shadow">
-                        <div class="row mb-4">
-                            <div class="col-md-4 mb-3 mb-md-0">
-                                <div class="form-check donation-option h-100 p-3 border rounded-3">
-                                    <input class="form-check-input" type="radio" name="donationAmount" id="amount1" value="25" checked>
-                                    <label class="form-check-label w-100 h-100 d-flex flex-column align-items-center justify-content-center" for="amount1">
-                                        <span class="h2 mb-0">$25</span>
-                                        <span class="text-muted">Monthly Support</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3 mb-md-0">
-                                <div class="form-check donation-option h-100 p-3 border rounded-3">
-                                    <input class="form-check-input" type="radio" name="donationAmount" id="amount2" value="100">
-                                    <label class="form-check-label w-100 h-100 d-flex flex-column align-items-center justify-content-center" for="amount2">
-                                        <span class="h2 mb-0">$100</span>
-                                        <span class="text-muted">One-time Gift</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-check donation-option h-100 p-3 border rounded-3">
-                                    <input class="form-check-input" type="radio" name="donationAmount" id="amount3" value="500">
-                                    <label class="form-check-label w-100 h-100 d-flex flex-column align-items-center justify-content-center" for="amount3">
-                                        <span class="h2 mb-0">$500</span>
-                                        <span class="text-muted">Sponsor a Laptop</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-grid">
-                            <a href="https://www.zeffy.com/en-US/donation-form/4a73aa8e-3f00-43cb-9cc3-b7262aaf959a" class="btn btn-primary btn-lg rounded-pill">Donate Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Customized Bootstrap Stylesheet -->
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Partners Section -->
-    <section class="py-5">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h6 class="text-primary text-uppercase fw-bold mb-2">Our Partners</h6>
-                <h2>Working Together for Change</h2>
-            </div>
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-4 col-6 mb-4 mb-md-0 text-center">
-                    <img src="/api/placeholder/200/80" alt="Partner Logo" class="img-fluid" style="max-height: 80px;">
-                </div>
-                <div class="col-md-4 col-6 mb-4 mb-md-0 text-center">
-                    <img src="/api/placeholder/200/80" alt="Partner Logo" class="img-fluid" style="max-height: 80px;">
-                </div>
-                <div class="col-md-4 col-6 text-center">
-                    <img src="/api/placeholder/200/80" alt="Partner Logo" class="img-fluid" style="max-height: 80px;">
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Template Stylesheet -->
+		<link href="css/style.css" rel="stylesheet" />
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="/api/placeholder/40/40" alt="Liahona Foundation Logo" class="me-2">
-                            <h4 class="text-white mb-0">Liahona Foundation</h4>
-                        </div>
-                        <p>Empowering students in Nigeria through educational resources and technology access.</p>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61559812543927" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/Liahona_F" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/liahona-foundation/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/liahona_foundation/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="impact.html">Our Impact</a></li>
-                        <li><a href="apply.html">Apply</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5>Contact Us</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Parker, Colorado, USA</li>
-                        <li><i class="fas fa-envelope me-2"></i> info@liahonafoundation.org</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5>Newsletter</h5>
-                    <p>Stay updated with our latest news and events.</p>
-                    <form class="mt-3">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email">
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <hr class="mt-4 mb-3 border-secondary">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2025 Liahona Foundation. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                    <p class="mb-0 small">Designed with <i class="fas fa-heart text-danger"></i> for education</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+		<!-- Schema Markup for SEO  Improvement -->
 
-    <!-- Bootstrap JS with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "EducationalOrganization",
+				"name": "Liahona Foundation",
+				"url": "https://www.liahonafoundation.org",
+				"logo": "https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/img/logo-single.svg",
+				"sameAs": [
+					"https://www.facebook.com/profile.php?id=61559812543927",
+					"https://x.com/Liahona_F",
+					"https://www.linkedin.com/company/liahona-foundation/",
+					"https://www.instagram.com/liahona_foundation/"
+				],
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+1-480-658-8508",
+					"contactType": "Team Member"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": " Parker, ",
+					"addressRegion": "Colorado",
+					"addressCountry": "USA"
+				},
+				"founder": {
+					"@type": "Person",
+					"name": "Andrew Olsen"
+				},
+				"description": "At Liahona Foundation, we provide laptops and tuition assistance to students in the Nigeria, African region, helping them achieve their educational dreams.",
+				"operatingArea": ["Country1, Nigeria"],
+				"program": [
+					{
+						"@type": "Program",
+						"name": "Laptop Scholarship Program",
+						"description": "Provides essential laptops to students in Nigeria facing the digital divide."
+					},
+					{
+						"@type": "Program",
+						"name": "Tuition Scholarship Program",
+						"description": "Offers tuition assistance to empower Nigeria students to pursue their education."
+					}
+				]
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- Spinner Start -->
+		<div
+			id="spinner"
+			class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+		>
+			<div class="spinner-grow text-primary" role="status"></div>
+		</div>
+		<!-- Spinner End -->
+
+		<!-- Navbar Start -->
+		<header
+			class="container-fluid fixed-top px-0 wow fadeIn"
+			data-wow-delay="0.1s"
+		>
+			<div
+				class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex"
+			>
+				<div class="col-lg-7 px-5 text-start">
+					<small
+						><i class="fa fa-map-marker-alt me-2"></i>Parker, Colorado,
+						USA</small
+					>
+					<small class="ms-4"
+						><i class="fa fa-envelope me-2"></i
+						>info@liahonafoundation.org</small
+					>
+				</div>
+				<div class="col-lg-5 px-5 text-end">
+					<small>Follow us:</small>
+					<a
+						class="text-white-50 ms-3"
+						href="https://www.facebook.com/profile.php?id=61559812543927"
+						><i class="fab fa-facebook-f"></i
+					></a>
+					<a class="text-white-50 ms-3" href="https://x.com/Liahona_F"
+						><i class="fab fa-twitter"></i
+					></a>
+					<a
+						class="text-white-50 ms-3"
+						href="https://www.linkedin.com/company/liahona-foundation/"
+						><i class="fab fa-linkedin-in"></i
+					></a>
+					<a
+						class="text-white-50 ms-3"
+						href="https://www.instagram.com/liahona_foundation/"
+						><i class="fab fa-instagram"></i
+					></a>
+				</div>
+			</div>
+
+			<nav
+				class="navbar navbar-expand-lg navbar-dark py-lg-0 wow fadeIn container"
+				data-wow-delay="0.1s"
+			>
+				<div class="d-flex justify-content-between">
+					<a
+						href="index-2.html"
+						class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center justify-content-start gap-2"
+					>
+						<img
+							src="https://winner-host.imgix.net/liahona-fondation/img/logo-single.svg"
+							alt=""
+							class="img-fluid logo-image"
+						/>
+						<h2 class="fw-bold text-primary m-0">
+							Liahona <span class="text-white">Foundation</span>
+						</h2>
+					</a>
+					<button
+						type="button"
+						class="navbar-toggler me-2"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarCollapse"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav ms-auto p-4 p-lg-0">
+						<a href="index-2.html" class="nav-item nav-link active">Home</a>
+						<a href="about.html" class="nav-item nav-link">About Us</a>
+						<a href="impact.html" class="nav-item nav-link">Our Impact</a>
+						<a href="apply.html" class="nav-item nav-link">Apply</a>
+						<a href="contact.html" class="nav-item nav-link">Contact</a>
+					</div>
+					<div class="d-none d-lg-flex ms-0">
+						<a
+							class="btn btn-primary py-2 px-2 donate d-flex align-items-center gap-2"
+							href="https://www.zeffy.com/en-US/donation-form/4a73aa8e-3f00-43cb-9cc3-b7262aaf959a"
+						>
+							Donate <i class="fa fa-arrow-circle-right fs-4"></i
+						></a>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- Navbar End -->
+
+		<main>
+			<!-- Carousel Start -->
+			<section class="container-fluid p-0 mb-5">
+				<div
+					id="header-carousel"
+					class="carousel slide"
+					data-bs-ride="carousel"
+				>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="carousel-img-container one"></div>
+							<div class="carousel-caption">
+								<div class="container">
+									<div class="row justify-content-center">
+										<div class="col-lg-7 pt-5">
+											<h1
+												class="display-4 text-white mb-3 animated slideInDown"
+											>
+												Empowering Students, One Laptop at a Time
+											</h1>
+											<p class="fs-5 text-white-50 mb-5 animated slideInDown">
+												We believe that every student deserves the opportunity
+												to succeed. Our mission is to provide laptops to
+												students in need.
+											</p>
+											<a
+												class="btn btn-primary py-2 px-3 animated slideInDown"
+												href="impact.html"
+											>
+												Learn More
+												<div
+													class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2"
+												>
+													<i class="fa fa-arrow-right"></i>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="carousel-img-container two"></div>
+							<div class="carousel-caption">
+								<div class="container">
+									<div class="row justify-content-center">
+										<div class="col-lg-7 pt-5">
+											<h1
+												class="display-4 text-white mb-3 animated slideInDown"
+											>
+												Uplifting Students, One Tuition at a Time
+											</h1>
+											<p class="fs-5 text-white-50 mb-5 animated slideInDown">
+												We also aim to provide tuition to students in need that
+												otherwise won't be able to afford due to financial
+												barriers.
+											</p>
+											<a
+												class="btn btn-primary py-2 px-3 animated slideInDown"
+												href="impact.html"
+											>
+												Learn More
+												<div
+													class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2"
+												>
+													<i class="fa fa-arrow-right"></i>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#header-carousel"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#header-carousel"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</section>
+			<!-- Carousel End -->
+
+			<!-- About Start -->
+			<section class="container-xxl py-5">
+				<div class="container">
+					<div class="row g-5">
+						<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+							<div
+								class="position-relative overflow-hidden h-100"
+								style="min-height: 400px"
+							>
+								<img
+									class="position-absolute w-100 h-100 pt-5 pe-5"
+									src="https://winner-host.imgix.net/liahona-fondation/img/study-group.jpg"
+									alt="African students studying"
+									style="object-fit: cover"
+									loading="lazy"
+								/>
+								<img
+									class="position-absolute top-0 end-0 bg-white ps-2 pb-2"
+									src="https://winner-host.imgix.net/liahona-fondation/img/about-2.jpg"
+									alt=""
+									style="width: 200px; height: 200px"
+									loading="lazy"
+								/>
+							</div>
+						</div>
+						<div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+							<div class="h-100">
+								<div
+									class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+								>
+									About Us
+								</div>
+								<h1 class="display-6 mb-5">
+									We Help Students In Nigeria, West Africa Region
+								</h1>
+								<div
+									class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4"
+								>
+									<p class="text-dark mb-2">
+										"Education is not preparation for life; education is life
+										itself."
+									</p>
+									<span class="text-primary"> John Dewey</span>
+								</div>
+								<p class="mb-5">
+									At Liahona Foundation, we are dedicated to bridging the
+									digital divide for students in the African region. By
+									providing essential laptops and tuition assistance, we empower
+									young minds to achieve their educational dreams and build a
+									brighter future. Our mission is rooted in the belief that
+									every student deserves equal access to quality education,
+									regardless of their financial circumstances.
+								</p>
+								<div class="d-flex gap-2">
+									<a class="btn btn-primary py-2 px-2" href="impact.html">
+										Learn More
+										<div
+											class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2"
+										>
+											<i class="fa fa-arrow-right"></i>
+										</div>
+									</a>
+									<a
+										class="btn btn-outline-primary py-2 px-2"
+										href="https://www.zeffy.com/en-US/donation-form/4a73aa8e-3f00-43cb-9cc3-b7262aaf959a"
+									>
+										Donate
+										<div
+											class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2"
+										>
+											<i class="fa fa-arrow-right"></i>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- About End -->
+
+			<!-- Causes Start -->
+			<section class="container-fluid bg-light my-5 py-5">
+				<div class="container py-5">
+					<div
+						class="text-center mx-auto mb-5 wow fadeInUp"
+						data-wow-delay="0.1s"
+						style="max-width: 500px"
+					>
+						<div
+							class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+						>
+							Feature Causes
+						</div>
+						<h1 class="display-6 mb-5">
+							Everyone Deserves The Opportunity To Learn And Grow
+						</h1>
+					</div>
+					<div class="why-we-exist row g-4 mt-3">
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="service-item text-center pt-3">
+								<div class="p-4">
+									<i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+									<h5 class="mb-3">Education</h5>
+									<p>
+										Support students in acquiring the education integral to
+										succeed in the society.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+							<div class="service-item text-center pt-3">
+								<div class="p-4">
+									<i class="fa fa-3x fa-globe text-primary mb-4"></i>
+									<h5 class="mb-3">Digital Equipments</h5>
+									<p>
+										Help students acquire laptops needed to undertake their
+										learning and grow.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+							<div class="service-item text-center pt-3">
+								<div class="p-4">
+									<i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
+									<h5 class="mb-3">Employability</h5>
+									<p>
+										Prepare young people with the skills necessary for today's
+										competitive job market.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+							<div class="service-item text-center pt-3">
+								<div class="p-4">
+									<i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+									<h5 class="mb-3">Access to Information</h5>
+									<p>
+										Empower individuals with the ability to explore information
+										needed for growth.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Causes End -->
+
+			<!-- Service Start -->
+			<section class="container-xxl py-5">
+				<div class="container">
+					<div
+						class="text-center mx-auto mb-5 wow fadeInUp"
+						data-wow-delay="0.1s"
+						style="max-width: 500px"
+					>
+						<div
+							class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+						>
+							What We Do
+						</div>
+						<h1 class="display-6 mb-5">
+							Learn More What We Do And Get Involved
+						</h1>
+					</div>
+					<div
+						class="counter row g-5 align-items-center justify-content-center mb-5"
+					>
+						<div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+							<div class="counter-item d-flex flex-column align-items-center">
+								<div class="counter-item-icon mx-auto">
+									<i class="fas fa-dollar-sign fa-3x"></i>
+								</div>
+								<h4 class="my-2">Donation</h4>
+								<div
+									class="counter-counting d-flex align-items-center justify-content-center"
+								>
+									<span class="fs-2 fw-bold mb-0">$</span>
+									<span class="fs-2 fw-bold" data-toggle="counter-up"
+										>3500</span
+									>
+									<span class="h1 fw-bold">+</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 wow fadeInUp" data-wow-delay="0.6s">
+							<div class="counter-item d-flex flex-column align-items-center">
+								<div class="counter-item-icon mx-auto">
+									<i class="fas fa-users fa-3x"></i>
+								</div>
+								<h4 class="my-2">Beneficiaries</h4>
+								<div class="counter-counting">
+									<span class="fs-2 fw-bold" data-toggle="counter-up">30</span>
+									<span class="h1 fw-bold">+</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 wow fadeInUp" data-wow-delay="0.8s">
+							<div class="counter-item d-flex flex-column align-items-center">
+								<div class="counter-item-icon mx-auto">
+									<i class="fas fa-laptop fa-3x"></i>
+								</div>
+								<h4 class="my-2">Devices</h4>
+								<div class="counter-counting">
+									<span class="fs-2 fw-bold" data-toggle="counter-up">12</span>
+									<span class="h1 fw-bold">+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row g-4 justify-content-center mt-4 align-items-center">
+						<div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+							<h3 class="area-title">How Can You Help?</h3>
+							<h5>
+								There are many ways you can help us bridge the education divide
+								in Nigeria. Here are a few ways you can help:
+							</h5>
+							<p class="mt-4">
+								We envision every student in Nigeria having access to education.
+								You have the power to make this a reality by supporting Liahona
+								Foundation and investing in education.
+							</p>
+							<div class="question d-flex gap-3 mt-5">
+								<div class="icon">
+									<i class="fas fa-phone text-white"></i>
+								</div>
+								<div class="info">
+									<h5>Have any question?</h5>
+									<p>
+										<i class="fa fa-envelope me-3"></i
+										>info@liahonafoundation.org
+									</p>
+								</div>
+							</div>
+						</div>
+						<div
+							class="col-lg-7 col-md-6 wow fadeInUp mt-5 mt-lg-0"
+							data-wow-delay="0.3s"
+						>
+							<div class="content">
+								<p>
+									The Liahona Foundation is currently seeking sponsors to
+									contribute to the fund to sponsor students to get a computer
+									necessary for their education. <br /><br />
+									Each student is currently enrolled in the BYU-Pathway
+									Worldwide educational program and are studying towards a
+									degree in various fields.
+								</p>
+							</div>
+
+							<div class="row mt-lg-5 gap-3 gap-lg-0">
+								<div
+									class="item col-lg-6 col-md-6 fadeInUp"
+									data-wow-delay="0.5s"
+								>
+									<div class="content">
+										<div class="thumb w-100">
+											<a href="impact.html">
+												<img
+													src="https://winner-host.imgix.net/liahona-fondation/img/laptop.jpg"
+													alt="Thumb"
+													class="img-fluid rounded"
+													loading="lazy"
+												/>
+												<div class="overlay text-center">
+													<h3 class="py-3">Donate a Laptop</h3>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div
+									class="item col-lg-6 col-md-6 fadeInUp"
+									data-wow-delay="0.8s"
+								>
+									<div class="content">
+										<div class="thumb w-100">
+											<a
+												href="https://www.zeffy.com/en-US/donation-form/4a73aa8e-3f00-43cb-9cc3-b7262aaf959a"
+											>
+												<img
+													src="https://winner-host.imgix.net/liahona-fondation/img/girl-studying.jpg"
+													class="img-fluid rounded"
+													alt="Thumb"
+													loading="lazy"
+												/>
+												<div class="overlay text-center">
+													<h3 class="py-3">Donate Cash</h3>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Service End -->
+
+			<!-- Donate Start -->
+			<section class="container-fluid donate my-5 py-5">
+				<div class="container py-5">
+					<div class="row g-5 align-items-center">
+						<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+							<div
+								class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+							>
+								Donate Now
+							</div>
+							<h1 class="display-6 text-white mb-5">
+								Thanks to Your Generosity, We Achieve Great Results
+							</h1>
+							<p class="text-white mb-0">
+								Your support has made a tremendous impact. Together, we’ve
+								provided countless students with the laptops and tuition
+								assistance they need to succeed. Our mission thrives because of
+								your generosity. Let's continue to empower the next generation
+								of leaders and scholars.
+							</p>
+						</div>
+						<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+							<div class="h-100 bg-white p-5">
+								<form>
+									<div class="row g-3">
+										<div class="col-12">
+											<div class="form-floating">
+												<input
+													type="text"
+													class="form-control bg-light border-0"
+													id="name"
+													placeholder="Your Name"
+												/>
+												<label for="name">Your Name</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-floating">
+												<input
+													type="email"
+													class="form-control bg-light border-0"
+													id="email"
+													placeholder="Your Email"
+												/>
+												<label for="email">Your Email</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="btn-group d-flex justify-content-around">
+												<input
+													type="radio"
+													class="btn-check"
+													name="btnradio"
+													id="btnradio1"
+													checked
+												/>
+												<label class="btn btn-light py-3" for="btnradio1"
+													>$10</label
+												>
+
+												<input
+													type="radio"
+													class="btn-check"
+													name="btnradio"
+													id="btnradio2"
+												/>
+												<label class="btn btn-light py-3" for="btnradio2"
+													>$20</label
+												>
+
+												<input
+													type="radio"
+													class="btn-check"
+													name="btnradio"
+													id="btnradio3"
+												/>
+												<label class="btn btn-light py-3" for="btnradio3"
+													>$30</label
+												>
+											</div>
+										</div>
+										<div class="col-12 d-flex justify-content-around">
+											<a
+												href="https://www.zeffy.com/en-US/donation-form/4a73aa8e-3f00-43cb-9cc3-b7262aaf959a"
+												class="btn btn-primary px-5"
+											>
+												Donate Now
+												<div
+													class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle"
+												>
+													<i class="fa fa-arrow-right"></i>
+												</div>
+											</a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Donate End -->
+
+			<!-- Partners Start -->
+			<section class="container-xxl py-5">
+				<div class="container">
+					<div
+						class="text-center mx-auto mb-5 wow fadeInUp"
+						data-wow-delay="0.1s"
+						style="max-width: 500px"
+					>
+						<div
+							class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+						>
+							Partners
+						</div>
+						<h1 class="display-6 mb-3">Meet our partners</h1>
+						<p class="fs-4">
+							We have partnered with other amazing organizations that share the
+							same dream and vision - to help African students succeed.
+						</p>
+					</div>
+					<div class="row g-5 align-items-center">
+						<div
+							class="col-lg-2 col-md-6 wow fadeInUp d-none d-lg-block"
+							data-wow-delay="0.1s"
+						></div>
+						<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+							<img
+								src="https://skepfoundation.org/wp-content/uploads/2023/04/Skep-Foundation-Empowering-Africans-to-Secure-Global-Jobs-Logo.png"
+								alt="Skep Foundation Logo"
+								class="img-fluid"
+								loading="lazy"
+							/>
+						</div>
+						<div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+							<img
+								src="https://inclusionafrika.imgix.net/logo.jpg"
+								alt="Inclusion Afrika Logo"
+								class="img-fluid"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Partners End -->
+
+			<!-- Testimonial Start -->
+			<section class="container-xxl py-5">
+				<div class="container">
+					<div
+						class="text-center mx-auto mb-5 wow fadeInUp"
+						data-wow-delay="0.1s"
+						style="max-width: 500px"
+					>
+						<div
+							class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3"
+						>
+							Testimonial
+						</div>
+						<h1 class="display-6 mb-5">
+							We Are Touching Lives And Making A Difference
+						</h1>
+					</div>
+					<div
+						class="owl-carousel testimonial-carousel wow fadeInUp"
+						data-wow-delay="0.1s"
+					>
+						<div class="testimonial-item text-center">
+							<img
+								class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+								src="https://winner-host.imgix.net/liahona-fondation/img/testimonials/solomon.jpg"
+								style="width: 100px; height: 100px"
+							/>
+							<div class="testimonial-text rounded text-center p-4">
+								<p>
+									The laptop has significantly boosted my productivity,
+									communication, and efficiency by allowing me to work and stay
+									connected from anywhere, whether at home, the institute, or on
+									the go. Its flexibility has improved my time management and
+									balance between work, school, and personal responsibilities,
+									while providing access to vast knowledge and creative tools
+									for research, online learning, and multimedia projects.
+								</p>
+								<h5 class="mb-1">Solomon</h5>
+								<span class="fst-italic">BYU-Pathway Worldwide Student</span>
+							</div>
+						</div>
+						<div class="testimonial-item text-center">
+							<img
+								class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+								src="https://winner-host.imgix.net/liahona-fondation/img/testimonials/rachael.jpg"
+								style="width: 100px; height: 100px"
+							/>
+							<div class="testimonial-text rounded text-center p-4">
+								<p>
+									The Liahona Foundation has been instrumental in my pursuit of
+									Hospitality and Tourism Management at Ensign College by
+									providing a much-needed laptop, transforming my academic
+									experience from daunting to empowering. Their support has not
+									only enabled me to excel in coursework and collaborate
+									effectively but also given me the confidence to overcome
+									financial barriers and pursue my dreams, for which I am
+									profoundly grateful.
+								</p>
+								<h5 class="mb-1">Rachael</h5>
+								<span class="fst-italic">Ensign College Student</span>
+							</div>
+						</div>
+						<div class="testimonial-item text-center">
+							<img
+								class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+								src="https://winner-host.imgix.net/liahona-fondation/img/testimonials/abigail.jpg"
+								style="width: 100px; height: 100px"
+							/>
+							<div class="testimonial-text rounded text-center p-4">
+								<p>
+									The laptop has significantly boosted my productivity,
+									communication, and efficiency by allowing me to work and stay
+									connected from anywhere, whether at home, the institute, or on
+									the go. Its portability and access to knowledge have improved
+									my time management and enabled me to research, take online
+									classes, collaborate on projects, and create multimedia
+									content
+								</p>
+								<h5 class="mb-1">Abigail</h5>
+								<span class="fst-italic">BYU-Idaho Student</span>
+							</div>
+						</div>
+						<div class="testimonial-item text-center">
+							<img
+								class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+								src="https://winner-host.imgix.net/liahona-fondation/img/testimonials/annie.jpg"
+								style="width: 100px; height: 100px"
+							/>
+							<div class="testimonial-text rounded text-center p-4">
+								<p>
+									I am immensely grateful and excited for this laptop that will
+									be instrumental in helping me complete my BYU–Pathway Degree,
+									it will also aid me to further more in my academic pursuits, I
+									can also improve more in learning digital skills, I want to
+									say thank you to the unwavering support from BYU–Pathway
+									worldwide and it's generous donors.
+								</p>
+								<h5 class="mb-1">Annie</h5>
+								<span class="fst-italic">BYU-Pathway Worldwide Student</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Testimonial End -->
+		</main>
+
+		<!-- Footer Start -->
+		<footer
+			class="container-fluid bg-dark text-white-50 footer mt-5 pt-5 wow fadeIn"
+			data-wow-delay="0.1s"
+		>
+			<div class="container py-5">
+				<div class="row g-5">
+					<div class="col-lg-4 col-md-6">
+						<a
+							href="index-2.html"
+							class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center justify-content-start gap-2"
+						>
+							<img
+								src="https://winner-host.imgix.net/liahona-fondation/img/logo-single.svg"
+								alt="Liahona Foundation Logo"
+								class="img-fluid logo-image"
+							/>
+							<h2 class="fw-bold text-primary m-0">
+								Liahona <span class="text-white">Foundation</span>
+							</h2>
+						</a>
+						<p class="mt-4">
+							Connect with us to learn more of the work we are doing in Nigeria
+						</p>
+						<div class="d-flex pt-2 gap-3">
+							<a class="btn btn-square me-1" href="https://x.com/Liahona_F"
+								><i class="fab fa-twitter"></i
+							></a>
+							<a
+								class="btn btn-square me-1"
+								href="https://www.facebook.com/profile.php?id=61559812543927"
+								><i class="fab fa-facebook-f"></i
+							></a>
+							<a
+								class="btn btn-square me-1"
+								href="https://www.instagram.com/liahona_foundation/"
+								><i class="fab fa-instagram"></i
+							></a>
+							<a
+								class="btn btn-square me-0"
+								href="https://www.linkedin.com/company/liahona-foundation/"
+								><i class="fab fa-linkedin-in"></i
+							></a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-light mb-4">Address</h5>
+						<p>
+							<i class="fa fa-map-marker-alt me-3"></i>Parker, Colorado, USA
+						</p>
+						<p><i class="fa fa-envelope me-3"></i>info@liahonafoundation.org</p>
+					</div>
+					<div class="col-lg-2 col-md-6">
+						<h5 class="text-light mb-4">Quick Links</h5>
+						<a class="btn btn-link" href="about.html">About Us</a>
+						<a class="btn btn-link" href="impact.html">Our Impact</a>
+						<a class="btn btn-link" href="apply.html">Apply</a>
+						<a class="btn btn-link" href="contact.html">Contact Us</a>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="text-light mb-4">Newsletter</h5>
+						<p>
+							Stay up to date on the impact we are making by subscribing to our
+							Newsletter
+						</p>
+						<div class="position-relative mx-auto" style="max-width: 400px">
+							<input
+								class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+								type="text"
+								placeholder="Your email"
+							/>
+							<button
+								type="button"
+								class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+							>
+								SignUp
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+							&copy; <a href="index-2.html">Liahona Foundation</a>, All Right
+							Reserved.
+						</div>
+						<div class="col-md-6 text-center text-md-end">
+							Designed and Developed By
+							<a href="https://www.linkedin.com/in/winnera" target="_blank"
+								>Aniekan Winner</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer End -->
+
+		<!-- Back to Top -->
+		<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+			><i class="bi bi-arrow-up"></i
+		></a>
+
+		<!-- JavaScript Libraries -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/wow/wow.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/easing/easing.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/waypoints/waypoints.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/counterup/counterup.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/owlcarousel/owl.carousel.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/lib/parallax/parallax.min.js"></script>
+
+		<!-- Template Javascript -->
+		<script src="https://cdn.jsdelivr.net/gh/DevaWinner/static@main/liahona-foundation/js/main.js"></script>
+	</body>
+
+<!-- Mirrored from liahonafoundation.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Mar 2025 18:40:25 GMT -->
 </html>
