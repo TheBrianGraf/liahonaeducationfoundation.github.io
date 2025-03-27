@@ -589,3 +589,8 @@
   width: 190px;
   height: 200px;
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: #fff;
+}
