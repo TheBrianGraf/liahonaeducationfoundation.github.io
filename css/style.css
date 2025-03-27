@@ -253,9 +253,11 @@
 
 /*** Team ***/
 .team-item img {
-	position: relative;
-	top: 0;
-	transition: 0.5s;
+	width: 200px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 20px;
+	margin-bottom: 1.5rem;
 }
 
 .team-item:hover img {
