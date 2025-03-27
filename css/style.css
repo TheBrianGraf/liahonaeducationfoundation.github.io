@@ -178,7 +178,7 @@
 	padding-top: 12rem;
 	padding-bottom: 6rem;
 	background: linear-gradient(rgba(0, 29, 35, 0.8), rgba(0, 29, 35, 0.8)),
-		url(../img/black-girl-summer-city-with-laptop.html) center center no-repeat;
+		url(../img/black-girl-summer-city-with-laptop.jpg) center center no-repeat;
 	background-size: cover;
 }
 
@@ -558,11 +558,11 @@
 }
 
 .carousel-img-container.one {
-	background: url(https://winner-host.imgix.net/liahona-fondation/img/lady-with-laptop.jpg);
+	background: url(img/lady-with-laptop.jpg);
 }
 
 .carousel-img-container.two {
-	background: url(https://winner-host.imgix.net/liahona-fondation/img/african-woman.jpg);
+	background: url(img/african-woman.jpg);
 }
 
 .carousel-img-container.one,
